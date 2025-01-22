@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-memorygamefrontend-dev-af002-authRole",
+      "UnauthRoleArn": "arn:aws:iam::828506525055:role/amplify-memorygamefrontend-dev-af002-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::828506525055:role/amplify-memorygamefrontend-dev-af002-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-memorygamefrontend-dev-af002-deployment",
+      "UnauthRoleName": "amplify-memorygamefrontend-dev-af002-unauthRole",
+      "StackName": "amplify-memorygamefrontend-dev-af002",
+      "StackId": "arn:aws:cloudformation:us-east-1:828506525055:stack/amplify-memorygamefrontend-dev-af002/d2ebb350-d909-11ef-b16e-0ec6584f42a9",
+      "AmplifyAppId": "d3trumbr7lm0il"
+    }
+  }
+}
