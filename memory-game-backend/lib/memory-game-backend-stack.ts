@@ -23,14 +23,13 @@ export class MemoryGameBackendStack extends cdk.Stack {
       projectionType: dynamodb.ProjectionType.ALL // Include all attributes in GSI
     });
 
-    // Define Lambdas
     const saveGameResultLambda = new lambda.Function(
       this,
       'SaveGameResultLambda',
       {
         runtime: lambda.Runtime.NODEJS_18_X,
-        handler: 'saveGameResult.handler',
-        code: lambda.Code.fromAsset('lambdas'), // Directory containing Lambda code
+        handler: 'saveGameResult.handler', // File and exported function
+        code: lambda.Code.fromAsset('lambdas'), // Path to the folder with Lambda code
         environment: {
           TABLE_NAME: gameTable.tableName
         }
@@ -42,7 +41,7 @@ export class MemoryGameBackendStack extends cdk.Stack {
       'GetLeaderboardLambda',
       {
         runtime: lambda.Runtime.NODEJS_18_X,
-        handler: 'getLeaderboard.handler',
+        handler: 'getLeaderboard.handler', // File and exported function
         code: lambda.Code.fromAsset('lambdas'),
         environment: {
           TABLE_NAME: gameTable.tableName

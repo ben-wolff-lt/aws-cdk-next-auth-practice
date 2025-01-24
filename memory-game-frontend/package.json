@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/axios": "^0.9.36",
+    "http-proxy-middleware": "^3.0.3",
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
