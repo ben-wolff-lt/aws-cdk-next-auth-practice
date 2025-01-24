@@ -18,22 +18,25 @@ export type Album = {
   photos: Photo[];
 };
 
-const API_PATH = '/api/proxy';
+const API_PATH = 'https://showcase.leantechniques.com/';
 
 const useAlbums = (): Album[] => {
   const [albums, setAlbums] = useState<Album[]>([]);
 
+  const API_KEY_HEADER = 'lt_api_key';
+  const API_KEY_VALUE = 'lt_tech_showcase';
+  const API_ROUTE = 'albums';
+
   useEffect(() => {
     const fetchAlbums = async () => {
-      await fetch(`${API_PATH}/albums`, {
-        // Correctly concatenated URL
+      await fetch(`${API_PATH}${API_ROUTE}`, {
         headers: {
-          lt_api_key: 'lt_tech_showcase'
+          [API_KEY_HEADER]: API_KEY_VALUE
         }
       })
         .then((res) => res.json())
-        .then((data) => setAlbums(data))
-        .catch((e) => console.error('Error fetching albums:', e));
+        .then((data: Album[]) => setAlbums(data))
+        .catch((e) => console.error(e));
     };
 
     fetchAlbums();
