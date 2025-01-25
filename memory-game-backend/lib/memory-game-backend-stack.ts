@@ -55,7 +55,12 @@ export class MemoryGameBackendStack extends cdk.Stack {
 
     // API Gateway
     const api = new apigateway.RestApi(this, 'MemoryGameApi', {
-      restApiName: 'Memory Game Service'
+      restApiName: 'Memory Game Service',
+      defaultCorsPreflightOptions: {
+        allowOrigins: apigateway.Cors.ALL_ORIGINS, // Allow all origins or specify an array of allowed origins
+        allowMethods: apigateway.Cors.ALL_METHODS, // Allow all HTTP methods
+        allowHeaders: ['Content-Type'] // Allow custom headers if needed
+      }
     });
 
     // Save Game Result Route
