@@ -14,7 +14,8 @@ const usePhotos = () => {
         const response = await axios.get(
           'https://dog.ceo/api/breeds/image/random/18'
         );
-        const photos: string[] = response?.data?.message;
+        const photos: string[] = (response.data as { message: string[] })
+          .message;
         setPhotos(photos);
       } catch (error) {
         console.error('Error fetching photos:', error);
