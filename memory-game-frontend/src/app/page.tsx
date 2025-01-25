@@ -319,7 +319,7 @@ export default function Home() {
               <div
                 key={card.uniqueId}
                 className={`relative h-24 w-24 sm:h-32 sm:w-32 rounded-md overflow-hidden cursor-pointer ${
-                  card.flipped || card.matched ? 'bg-white' : 'bg-gray-400'
+                  card.flipped || card.matched ? 'bg-white' : 'bg-gray-500'
                 }`}
                 onClick={() => handleFlip(index)}
               >
@@ -332,7 +332,7 @@ export default function Home() {
                     style={{ objectFit: 'cover' }}
                   />
                 ) : (
-                  <div className="absolute inset-0 flex items-center justify-center text-white font-bold">
+                  <div className="absolute inset-0 flex items-center justify-center text-white text-3xl">
                     ?
                   </div>
                 )}
