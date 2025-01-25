@@ -64,7 +64,7 @@ export default function Home() {
         }
       });
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const leaderboardData = response.data.map((entry: any) => ({
+      const leaderboardData = (response.data as any[]).map((entry: any) => ({
         ...entry,
         userId: entry.PK.split('#')[1] // Parse user name from PK
       }));
